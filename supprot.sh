@@ -7,7 +7,13 @@ exit 0
 END
 # Disable check Certificate
 echo "check_certificate = off" >> ~/.wgetrc
+# disable ipv6
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
+echo 1 > /proc/sys/net/ipv4/ip_forward
+sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+sysctl -p
 # Iptables Nat
 sudo nft add table nat
 sudo nft 'add chain nat postrouting { type nat hook postrouting priority 100 ; }'
