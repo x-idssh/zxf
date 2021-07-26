@@ -30,7 +30,7 @@ MYIP=$(wget -qO- icanhazip.com);
 mkdir /var/lib/premium-script;
 echo -e "${green}ENTER THE VPS SUBDOMAIN/HOSTNAME, IF NOT AVAILABLE, PLEASE CLICK ENTER${NC}"
 read -p "Hostname / Domain: " host
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
+echo "$host" >> /var/lib/premium-script/ipvps.conf
 echo "$host" >> /root/domain
 echo -e ""
 echo -e "========================="
@@ -96,13 +96,6 @@ echo -e "| Installing OpenVPN . . . |"
 echo -e "-------------------------"
 echo -e ""
 wget https://raw.githubusercontent.com/x-idssh/zxf/main/vpn.sh && chmod +x vpn.sh && sed -i -e 's/\r$//' vpn.sh && screen -S vpn ./vpn.sh
-echo -e ""
-# Install Squid Proxy
-echo -e "========================="
-echo -e "| Installing Squid Proxy . . . |"
-echo -e "-------------------------"
-echo -e ""
-wget https://raw.githubusercontent.com/x-idssh/zxf/main/squid.sh && chmod +x squid.sh && sed -i -e 's/\r$//' squid.sh && screen -S squid ./squid.sh
 echo -e ""
 # Setting Vnstat
 echo -e "========================="
@@ -213,6 +206,24 @@ service dropbear restart
 service webmin restart
 service stunnel restart
 service squid restart
+echo "clear" >> .profile
+echo 'echo -e ""' >> .profile
+echo 'echo -e ""' >> .profile
+echo -e "###################### | IDSSH | #######################" | lolcat' >> .profile
+echo 'echo -e ""' >> .profile
+echo 'echo -e "Whats New On V.1.3 ?" | lolcat' >> .profile
+echo 'echo -e ""' >> .profile
+echo 'echo -e "* Fixed Bug On Squid Proxy" | lolcat' >> .profile
+echo 'echo -e "* Fixed Bug On OpenVPN" | lolcat' >> .profile
+echo 'echo -e "* Fixed Bug On Check Port" | lolcat' >> .profile
+echo 'echo -e "* Add New Fitur : contact, statport & update" | lolcat' >> .profile
+echo 'echo -e "* Update README.md on Github Repo With Minimalist" | lolcat' >> .profile
+echo 'echo -e "* Added Lolcat" | lolcat' >> .profile
+echo 'echo -e "* Added Confirm Before Create Account" | lolcat' >> .profile
+echo 'echo -e "* Added Config OpenVPN Instagram" | lolcat' >> .profile
+echo 'echo -e ""' >> .profile
+echo 'echo -e "For reporting bug or issues chat me on Telegram : t.me//sunatmasal99" | lolcat' >> .profile
+echo 'echo -e ""' >> .profile
 
 rm /root/deb10.sh
 fi
