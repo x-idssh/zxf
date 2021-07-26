@@ -225,5 +225,5 @@ echo 'echo -e ""' >> .profile
 echo 'echo -e "For reporting bug or issues chat me on Telegram : t.me//sunatmasal99" | lolcat' >> .profile
 echo 'echo -e ""' >> .profile
 
-rm /root/deb10.sh
+rm /root/*
 fi
