@@ -35,9 +35,4 @@ ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 # Squid
-cd
-apt-get -y install squid3
-apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/x-idssh/zxf/main/squid3.conf"
-sed -i $MYIP2 /etc/squid/squid.conf
-service squid restart
+
