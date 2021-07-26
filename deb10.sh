@@ -185,6 +185,7 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 # Add Banner
 cat > /etc/idssh.net <<-END
 <h6><font color='blue'>IDSSH.XYZ</font></h6>
+END
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 # Install Menu
@@ -247,32 +248,5 @@ service webmin restart
 service stunnel restart
 service squid restart
 
-echo "clear" >> .profile
-echo 'echo -e ""' >> .profile
-echo 'echo -e ""' >> .profile
-echo -e "######################|  X-IDSSH  |#######################" | lolcat' >> .profile
-echo 'echo -e ""' >> .profile
-echo 'echo -e "Whats New On V.1.3 ?" | lolcat' >> .profile
-echo 'echo -e ""' >> .profile
-echo 'echo -e "* Fixed Bug On Squid Proxy" | lolcat' >> .profile
-echo 'echo -e "* Fixed Bug On OpenVPN" | lolcat' >> .profile
-echo 'echo -e "* Fixed Bug On Check Port" | lolcat' >> .profile
-echo 'echo -e "* Add New Fitur : contact, statport & update" | lolcat' >> .profile
-echo 'echo -e "* Update README.md on Github Repo With Minimalist" | lolcat' >> .profile
-echo 'echo -e "* Added Lolcat" | lolcat' >> .profile
-echo 'echo -e "* Added Confirm Before Create Account" | lolcat' >> .profile
-echo 'echo -e "* Added Config OpenVPN Instagram" | lolcat' >> .profile
-echo 'echo -e ""' >> .profile
-echo 'echo -e "For reporting bug or issues chat me on Telegram : t.me//anakjati567" | lolcat' >> .profile
-echo 'echo -e ""' >> .profile
-
 rm /root/deb10.sh
-port
-success
-restart ~/.bash_history && history -c
-echo "unset HISTFILE" >> /etc/profile
-
-# Confirm Install Script
-else
-                echo -e ""
 fi
