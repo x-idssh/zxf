@@ -1,0 +1,2 @@
+#!/bin/bash
+apt install -y bzip2 gzip coreutils curl unzip netcat tcpd libsctp-dev cmake make gcc zlib1g-dev libwrap0-dev certbot perl libperl-dev libgd3 libgd-dev libgeoip1 libgeoip-dev geoip-bin libxml2 libxml2-dev libxslt1.1 libxslt1-dev build-essential git tree libpcre3-dev socket dh-autoreconf libssh-4 libssh-dev libconfig9 lolcat mercurial screen chron
