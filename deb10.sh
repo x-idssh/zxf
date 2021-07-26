@@ -28,7 +28,7 @@ echo -e ""
 # Script Access 
 MYIP=$(wget -qO- icanhazip.com);
 echo -e "${green}CHECKING SCRIPT ACCESS${NC}"
-IZIN=$( curl https://raw.githubusercontent.com/x-idssh/xxx/main/ipvps | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/x-idssh/zxf/main/ipvps | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}ACCESS GRANTED...${NC}"
 else
