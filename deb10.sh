@@ -29,7 +29,7 @@ echo -e ""
 myip=$(curl http://www.wheremyipaddress.com/ 2>/dev/null | grep 'IP Location' | cut -d'>' -f4 | cut -d'<' -f1 | cut -d',' -f3)
 echo $MYIP
 echo -e "${green}CHECKING SCRIPT ACCESS${NC}"
-IZIN=$( curl https://raw.githubusercontent.com/window22/x-idssh/zxf/main/ipvps | grep $MYIP )
+IZIN=$( curl https://raw.githubusercontent.com/x-idssh/zxf/main/ipvps | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}ACCESS GRANTED...${NC}"
 else
