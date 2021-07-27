@@ -1,12 +1,9 @@
 #!/bin/bash
-
 MYIP=$(curl -s http://whatismyip.akamai.com/);
 domain=$(cat /var/lib/premium-script/ipvps.conf)
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
 Pass=1
-
-
 echo Script AutoCreate Akun SSH dan OpenVPN by Haweng
 sleep 1
 echo Ping Host
@@ -52,4 +49,4 @@ echo -e "GET / HTTP/1.1[crlf]Host: $domain[crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "SNI : $domain"
 echo -e "==============================="
 echo -e "Aktif Sampai   : $exp"
-echo -e "Script by X-IDSSH"
+echo -e ""
