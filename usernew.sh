@@ -1,12 +1,10 @@
 #!/bin/bash
 echo "Checking Vps"
-
 sleep 0.5
 clear
 read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
-
 MYIP=$(curl -s http://whatismyip.akamai.com/);
 domain=$(cat /var/lib/premium-script/ipvps.conf)
 echo Script AutoCreate Akun SSH dan OpenVPN X-IDSSH
