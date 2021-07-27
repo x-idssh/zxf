@@ -26,7 +26,16 @@ echo -e ""
 wget https://raw.githubusercontent.com/x-idssh/zxf/main/supprot.sh && chmod +x supprot.sh && sed -i -e 's/\r$//' supprot.sh && screen -S supprot ./supprot.sh
 echo -e ""
 # Subdomain Settings
-MYIP=$(wget -qO- icanhazip.com);
+MYIP=$(curl -s http://whatismyip.akamai.com/);
+echo -e "${green}CHECKING SCRIPT ACCESS${NC}"
+IZIN=$( curl https://raw.githubusercontent.com/x-idssh/xxx/main/ipvps | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+echo -e "${green}ACCESS GRANTED...${NC}"
+else
+echo -e "${green}ACCESS DENIED...${NC}"
+exit 1
+fi
+######
 mkdir /var/lib/premium-script;
 echo -e "${green}ENTER THE VPS SUBDOMAIN/HOSTNAME, IF NOT AVAILABLE, PLEASE CLICK ENTER${NC}"
 read -p "Hostname / Domain: " host
