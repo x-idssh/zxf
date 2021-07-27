@@ -34,5 +34,7 @@ systemctl start rc-local.service
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-# Squid
-
+# Banner
+cat > /etc/idssh.net <<-END
+<h6><font color='blue'>IDSSH.XYZ</font></h6>
+END
