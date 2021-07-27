@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IP=$(wget -qO- icanhazip.com);
+MYIP=$(curl -s http://whatismyip.akamai.com/);
 domain=$(cat /var/lib/premium-script/ipvps.conf)
 Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 hari="1"
@@ -29,7 +29,7 @@ echo -e "Informasi Akun SSH & OpenVPN"
 echo -e "Username       : $Login "
 echo -e "Password       : $Pass"
 echo -e "==============================="
-echo -e "IP Server      : $IP"
+echo -e "IP Server      : $MYIP"
 echo -e "Host           : $domain"
 echo -e "OpenSSH        : 22"
 echo -e "Dropbear       : 222"
@@ -38,9 +38,9 @@ echo -e "WS-SSH         : 80"
 echo -e "WS SSL-SSH     : 443"
 echo -e "WS-OVPN        : 2095"
 echo -e "Port Squid     : 3128, 8080 (limit to IP SSH)" 
-echo -e "OpenVPN        : TCP 1194 http://$IP:81/client-tcp-1194.ovpn"
-echo -e "OpenVPN        : UDP 2200 http://$IP:81/client-udp-2200.ovpn"
-echo -e "OpenVPN        : SSL 443 http://$IP:81/client-tcp-ssl.ovpn"
+echo -e "OpenVPN        : TCP 1194 http://$MYIP:81/client-tcp-1194.ovpn"
+echo -e "OpenVPN        : UDP 2200 http://$MYIP:81/client-udp-2200.ovpn"
+echo -e "OpenVPN        : SSL 443 http://$MYIP:81/client-tcp-ssl.ovpn"
 echo -e "badvpn         : 7300"
 echo -e "==============================="
 echo -e "Payload WS - SSH "
